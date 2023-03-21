@@ -1,1 +1,1 @@
-print("he;l")
+print
