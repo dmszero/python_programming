@@ -70,6 +70,137 @@ list3=[1,2,3,4,5,6,7,8]
 #list3[1]=list2
 #print(list3)
 list3[1:2]=list2
-print(list3)
+print(list3,'\n')
 
-#=============tuple================
+
+print('==============list_ food 예제================')
+#===========list food 예제=============
+#list insert _food 
+food =[]
+food.append("chicken")
+food.append("sandwich")
+print(food)
+food.insert(0,"pizza") # insert 'pizza' into list's 1st
+print(food)
+food.insert(2,"pasta")
+print(food)
+food.remove('chicken') # delete 'chicken'
+print(food,'\n')
+
+#pop --> food list 에서 빼내기
+print("food.pop :", food.pop())
+print(food)
+print("food.pop:",food.pop())
+print(food,'\n')
+
+#<서로 다른 list를 합치는 예제>
+print(food)
+dessert =['coffe','cake','waffle']
+#Ex1) 새로운 list를 생성
+food_list = food + dessert  
+print(food_list)
+#Ex2) extend 사용
+food.extend(dessert)
+print(food,'\n')
+
+#reverse -> 순서를 거꾸로 한다.
+print(food)
+food.reverse() 
+print(food)
+
+#food.clear()
+'''del food
+print(food)'''
+
+#sort()
+#sorted()
+l1 = ['banana','apple','orange','mango']
+print(l1)
+print("sorted(l1): ",sorted(l1))
+print("l1:",l1)
+print("li: ",l1)
+
+l1.sort()
+print(l1,'\n')
+
+
+
+print('=============리스트 컴프리헨션================')
+#=============리스트 컴프리헨션 ()================
+
+# 예제1 ---- <0~10까지 숫자를 가지는 list 작성 >
+#방법1) for 문 사용
+l3=[0,1,2,3,4,5,6,7,8,9,10]
+l3=[]
+for i in range(11) :
+    l3.append(i)
+print(l3)
+
+#방법2) 리스트 컴프리 헨션 사용
+# 리스트 컴프리헨션
+'''리스트 변수명 = [i for i in range()]'''
+l3 = [i for i in range(11)] # 0~10까지 있는 range i를 i 에 넣어라
+print(l3)
+
+# 예제 2 ---- <0~10까지 숫자의 제곱을 원소로 가지는 리스트 작성>
+l3 = [ i*i for i in range(11)] # -----> i*i == i**2
+print(l3)
+
+# 예제 3 ---- <0~10까지 숫자의 3배를 원소로 가지는 리스트 작성>
+l3 = [i*3 for i in range(11)]
+print(l3)
+
+# 예제 4 ---- < hello 를 10개 가지는 리스트 작성>
+l4 = ['hello']
+l4 = [ 'hello' for i in range(10)] #----> for문을 적고 그 앞에 넣고 싶은 리스트 입력
+print(l4)
+
+''' <str 다른 방법>
+l4=[]
+for i in range(10)
+    l4.apeend("hello") '''
+
+# 예제 5 ---- < 0~10 까지의 숫자의 제곱을 리스트로 작성  -> 짝수의 제곱만 넣기>
+'''if i in range(11):
+    if i %2 ==0 :
+        l3.append(i**2)
+print(l3) '''
+
+l3 = [ i**2 for i in range(11) if i%2==0]
+print(l3)
+
+
+
+
+
+
+#=========shallow copy==========
+
+wishlist= food
+print("food:   ", food)
+print("wishlist:  ",wishlist)
+
+food.pop()
+print("after food.pop()")
+print("food:   ",food)
+print("wishlist:  ", wishlist)
+
+print(food is wishlist)
+
+
+#=========deep copy=============
+food2 = food[:]
+food3= list(food)
+
+print('deep copy')
+print('food:   ',food)
+print('food2:  ', food2)
+print(food is food2)
+food2.append("bulgogi")
+print('food:   ', food)
+print('food2:  ',food2)
+
+food.append('steak')
+print('food:   ', food)
+print('wishlist: ',wishlist)
+print('food2:  ',food2)
