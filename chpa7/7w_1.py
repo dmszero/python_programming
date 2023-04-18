@@ -121,3 +121,39 @@ print(type(seqli2))
 seqd=dict(enumerate(seqli))
 print(seqd)
 print(type(seqd))
+
+#========= zip ============
+#list,tuple 이 여러개 ->하나의 튜플 조합으로 된 리스트
+# Ex1)
+l1=['1조','2조','3조']
+YA =['홍','김','이']
+YB =['최','한','James']
+
+z= zip(l1,YA,YB)
+print(type(z))
+print(z)
+print(list(z)) #--> z를 list로 바꿈
+print(tuple(zip(l1,YA,YB))) #--> zip 을 다시 선언후 tuple로 변경
+
+# Ex2)
+l2 = ['한식','양식','중식','분식']
+l3 =['전주식당','홍콩반점','청년다방','취성루']
+l4=['피자','제육','파스타','김밥']
+print(list(zip(l2,l3,l4)))
+
+for i in range(4) :
+    print(l2[i],l3[i],l4[i])
+
+l5 = list(zip(l2,l3,l4))
+for i in l5 :
+    print(i[0],i[1],i[2])
+
+#두개의 리스트를 dictionary 로 바꿀 때는 무조건 zip 이 필요함
+print()
+print(dict(zip(l2,l3)))
+
+#enmurate 이용
+print(list(enumerate(l2)))
+print(dict(enumerate(l2)))
+
+#dictionary로 만든다
