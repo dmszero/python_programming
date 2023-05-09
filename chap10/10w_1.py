@@ -22,3 +22,14 @@ print(math.fsum([1,2,3]))
 print(math.gcd(10,20))
 print(math.ceil(5.333))
 
+#다른 파일 함수 import하기
+#hello.py import 
+import Hello as h  #--> 실행됨
+h.helloworld()
+
+#특정한 것만 name지어서 print 하기 ->다른 곳에서 import할 때, print문 나오는 것 방지
+print("__name__:",__name__,"\n")
+
+#하위 디렉터리가 많아도 import할 수 있음
+from hong.ai import HelloData
+HelloData.helloworld()
